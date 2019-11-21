@@ -279,13 +279,13 @@ public class MyCircularLinkedList<E> implements MyList<E> {
 			}
 			canRemove = false;
 			Node<E> current = (Node<E>) tail;
-			for (int i=0; i<size;i++) { //Traverse to current index in list
+			//Traverse to current index in list
+			for (int i=0; i<index;i++) {
 				current = current.next;
 			}
 			current.next = current.next.next;
 			size--;
 			index--;
-			current = current.next;
 		}
 	}
 }
