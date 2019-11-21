@@ -65,14 +65,14 @@ public class MyCircularLinkedList<E> implements MyList<E> {
 	public int indexOf(Object e) {
 		Node<E> current = tail;
 		int index = 0;
-		for (int i=0; i<size; i++) {
+		for (int i=0; i<size; i++) { //Loop through entire list
 			current = current.next;
-			if (current.element.equals(e)) {
+			if (current.element.equals(e)) { //If the elements are equal, returns it
 				return index;
 			}
 			index++;
 		}
-		return -1;
+		return -1; //If never found, returns -1
 	}
 
 	@Override //Returns index of last occurrence of object e, returns -1 if not found
@@ -80,46 +80,47 @@ public class MyCircularLinkedList<E> implements MyList<E> {
 		Node<E> current = tail;
 		int index = 0;
 		int lastFound = -1;
-		for (int i=0; i<size; i++) {
+		for (int i=0; i<size; i++) { //Loops through entire list
 			current = current.next;
-			if (current.element.equals(e)) {
+			if (current.element.equals(e)) { //If it's equal, sets lastFound to it
 				lastFound = index;
 			}
 			index++;
 		}
-		return lastFound;
+		return lastFound; //returns lastFound, will be -1 if nothing was found
 	}
 
 	@Override //Removes and returns an element based on index given
 	public E remove(int index) {
-		if (size == 1) {
+		if (size == 1) { //If size is one, empties list
+			E temp = tail.element;
 			this.clear();
-			return null;
+			return temp;
 		}
 		else {
 			Node<E> current = tail;
-			for (int i = 0; i < index; i++) {
+			for (int i = 0; i < index; i++) { //Loop up to just before index given
 				current = current.next;
 			}
-			E temp = current.next.element;
-			current.next = current.next.next;
-			size--;
-			return temp;
+			E temp = current.next.element; //Gets the object of the one being removed
+			current.next = current.next.next; //Set's current's next to the next's next, so 1,2,3 to 1,3
+			size--; //Reduce size by 1
+			return temp; //Return the element that was removed
 		}
 	}
 
-	@Override //Sets the object at an index to the object given
+	@Override //Sets the object at an index to the object given, returns previous object
 	public E set(int index, E e) {
-		if (index >= size || index < 0) {
+		if (index >= size || index < 0) { //Checks for valid index
 			throw new IndexOutOfBoundsException("Index out of bounds");
 		}
 		Node<E> current = tail;
-		for (int i=0; i<=index; i++) {
+		for (int i=0; i<=index; i++) { //Goes to current index
 			current = current.next;
 		}
-		E temp = current.element;
-		current.element = e;
-		return temp;
+		E temp = current.element; //Sets temp to current element so it can be returned later
+		current.element = e; //Changes value of element
+		return temp; //Returns previous element
 	}
 
 	@Override //Checks if an object is contained in the list

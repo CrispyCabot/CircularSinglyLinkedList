@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bb21058-4937-430b-924b-c174dbfc4389" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/MyCircularLinkedList$ListIterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/MyCircularLinkedList$ListIterator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyCircularLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyCircularLinkedList.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
